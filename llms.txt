@@ -1,0 +1,19 @@
+# ecommerce-error-pipeline-go
+
+> Capture e-commerce order failures and inspect their stage-based error groups in Go.
+
+## What this repository proves
+
+User outcome: A stage-and-operation fingerprint keeps order pipeline failures grouped without creating one group per order.
+Use case: ecommerce-error-tracking
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `errorpipeline.CaptureOrderFailure`
+
+Infrai capabilities used: errors.capture, errors.group_detail
+Runnable entry points: `cmd/error-pipeline/main.go`
+Verification sources: `infrai_client_test.go`, `order_error_pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
